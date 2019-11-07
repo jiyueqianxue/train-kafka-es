@@ -45,9 +45,11 @@ public class ESService{
     public Delete getDeleteIndex(String id, String esType) {
         return new Delete.Builder(id).index(Config.ES_INDICES).type(esType).build();
     }
-
-    public boolean executeESClientRequest(List indexList, String esType) {
-        Bulk bulk = new Bulk.Builder()
+  
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public boolean executeESClientRequest(List indexList, String esType) {
+        
+		Bulk bulk = new Bulk.Builder()
                 .defaultIndex(Config.ES_INDICES)
                 .defaultType(esType)
                 .addAction(indexList)

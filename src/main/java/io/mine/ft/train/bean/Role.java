@@ -11,7 +11,11 @@ import java.io.Serializable;
  * @Modified By :
  */
 public class Role implements Serializable {
-    @JestId
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@JestId
     private int id;
     private String name;
 
